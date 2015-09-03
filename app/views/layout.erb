@@ -15,9 +15,24 @@
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
 
-  <title></title>
+  <title>HCKR News</title>
 </head>
 <body>
+  <div class="nav">
+    <div class="nav-items logo"><a href="/"><img src="../image/hckr_logo.png" alt="HCKR News" width="26px" height="26px"></a></div>
+    <div class="nav-items"><a href="/" class="logo_text">HCKR NEWS</a>&nbsp;&nbsp;| <a href="/new_post">submit</a></div>
+    <div class="nav-items login">
+    <% current_user %>
+    <% if session[:user_id] %>
+    <a href="/user_profile/<%= @current_user.id %>"><%= @current_user.name %></a> | <a href="/logout">logout</a>
+    <% else %>
+    <a href="/login">login</a>
+    <% end %>
+    </div>
+  </div>
+  <% if @flash %>
+  <div class="flash"><%= @flash %></div>
+  <% end %>
   <%= yield %>
 </body>
 </html>

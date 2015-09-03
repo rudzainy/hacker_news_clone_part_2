@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="title"><%= @post.title %></div>
+  <div class="post-user">by <a href="/user_profile/<%= @post.user.id %>"><%= @post.user.name %></a> <%= calculate_time_ago(@post.created_at) %> | <%= @post.comments.count %> comments</div>
+  <div>
+    <p><%= @post.content %></p>
+  </div>
+  <form action="/add_comment/<%= @post.id %>" method="POST">
+    <div><textarea name="comment"></textarea></div>
+    <div><input type="submit" value="Add comment" class="button"></div>
+  </form>
+  <div style="height: 30px;"></div>
+  <% @post.comments.all.each do |comment| %>
+  <div class="post-user supertext"><a href="/user_profile/<%= comment.user.id %>"><%= comment.user.name %></a> <%= calculate_time_ago(comment.created_at) %></div>
+  <div><p><%= comment.comment %></p></div>
+  <% end %>
+</div>

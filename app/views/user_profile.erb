@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="form-container">
+    <table>
+      <tr>
+        <td>username</td>
+        <td> : </td>
+        <td><%= @user.name %></td>
+      </tr>
+      <tr>
+        <td>created</td>
+        <td> : </td>
+        <td><%= calculate_time_ago(@user.created_at) %></td>
+      </tr>
+      <tr>
+        <td>about</td>
+        <td> : </td>
+        <td><%= @user.about %></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td><a href="/user_posts/<%= @user.id %>">submissions</a><br><a href="/user_comments/<%= @user.id %>">comments</a></td>
+      </tr>
+    </table>
+  </div>
+</div>

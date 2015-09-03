@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="form-container">
+    <form action="/edit_profile" method="POST">
+    <table>
+      <tr>
+        <td>username</td>
+        <td> : </td>
+        <td><%= @current_user.name %></td>
+      </tr>
+      <tr>
+        <td>created</td>
+        <td> : </td>
+        <td><%= calculate_time_ago(@current_user.created_at) %></td>
+      </tr>
+      <tr>
+        <td>about</td>
+        <td> : </td>
+        <td><textarea name="about"><%= @current_user.about %></textarea></td>
+      </tr>
+      <tr>
+        <td>email</td>
+        <td> : </td>
+        <td><input type="text" name="email" value="<%= @current_user.email %>"></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td><a href="/user_posts/<%= @current_user.id %>">submissions</a><br><a href="/user_comments/<%= @current_user.id %>">comments</a></td>
+      </tr>
+      <tr>
+        <td><input type="submit" value="Update"></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+  </form>
+  </div>
+</div>

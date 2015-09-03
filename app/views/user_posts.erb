@@ -1,10 +1,10 @@
 <div class="container">
   <table>
-    <% Post.all.reverse.each_with_index do |post, index| %>
+    <% @post.each_with_index do |post, index| %>
     <tr>
       <td>
       <% if post.link != "" %>
-      <span style="greyed"><%= index + 1 %>.</span> <a href="http://<%= post.link %>"><%= post.title %></a> <span class="post-url">(<%= post.link %>)</span>
+      <%= index + 1 %>. <a href="http://<%= post.link %>"><%= post.title %></a><span class="post-url">(<%= post.link %>)</span>
       <% else %>
       <%= index + 1 %>. <a href="view_post/<%= post.id %>"><%= post.title %></a>
       <% end %>

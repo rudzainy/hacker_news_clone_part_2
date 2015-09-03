@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="form-container">
+    <h1>Submit new post</h1>
+    <form action="/new_post" method="POST">
+      <table>
+        <tr>
+          <td>title</td>
+          <td> : </td>
+          <td><input type="text" name="title" value="<%= @title %>"></td>
+        </tr>
+        <tr>
+          <td>url</td>
+          <td> : </td>
+          <td><input type="text" name="link" value="<%= @link %>"><br>or</td>
+        </tr>
+        <tr>
+          <td>text</td>
+          <td> : </td>
+          <td><textarea name="content"><%= @content %></textarea></td>
+        </tr>
+        <tr>
+          <td colspan="3">
+            <input type="submit" class="button">
+          </td>
+        </tr>
+      </table>
+    </form>
+  </div>
+</div>

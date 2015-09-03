@@ -1,9 +1,138 @@
 .container {
-  margin: 20px auto;
-  width: 600px;
-  padding: 0px 20px 20px 20px;
-  border: 1px dotted black;
+  margin: 0 auto;
+  width: 80%;
+  padding: 10px 10px 20px 10px;
+  border: none;
+  background-color: #f6f6ef;
+  min-height: 300px;
+  position: relative;
 }
-th {
-  text-align: left;
+
+.flash {
+	padding: 10px;
+	margin: 0 auto;
+	width:80%;
+	color: white;
+	text-shadow: 1px 1px #000000;
+	background: repeating-linear-gradient(
+  45deg,
+  #ffff00,
+  #ffff00 10px,
+  #666666 10px,
+  #666666 20px
+);
+	
+}
+
+.nav {
+	background-color: rgb(255, 102, 0);
+	color: #000;
+	font-family: sans-serif;
+	/*font-size: .85em;*/
+	margin: 20px auto 0 auto;
+	width: 80%;
+	height:30px;
+	padding: 0 10px 0 10px;
+	border:none;
+	position: relative;
+}
+
+.nav-items {
+	padding: 7px 5px;
+}
+
+.logo {
+	padding-top: 2px !important;
+	padding-left: 0 !important;
+	width: 26px;
+	position: relative;
+	float: left;
+}
+
+.logo_text {
+	font-weight: bold;	
+	position: relative;
+	float: left;
+}
+
+a.logo_text {
+	text-decoration: none !important;
+}
+
+.login {
+	position: absolute;
+	top: 0;
+	right: 10px;
+}
+
+.form-container {
+	width: 50%;
+	margin: 0 auto;
+	position: relative;
+	float: left;
+}
+
+.post-url {
+	font-size: .85em;
+	color: #828282;
+}
+
+.post-user {
+	font-size: .8em;
+	color: #828282;
+}
+
+.post-user a {
+	color: #828282;
+}
+
+.subtext {
+	padding-left: 18px;
+}
+
+.supertext {
+	margin-bottom: -10px;
+}
+
+.greyed {
+	color: #828282;
+}
+
+.button {
+	padding: 5px 10px;
+	border: none;
+	border-radius: .2rem;
+	background-color: rgb(255, 102, 0);
+	margin-top: 10px;
+	color: white;
+}
+
+body {
+	font-family: sans-serif;
+	font-size: .9em;
+}
+
+p {
+	line-height: 1.5rem;
+}
+
+a {
+	text-decoration: none;
+	color: #000; /* #828282 */
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+td {
+  vertical-align: top;
+}
+
+textarea {
+	width: 400px;
+	height: 100px;
+	resize: none;
+	border-radius: .2rem;
+	border: solid #ccc 1px;
 }
