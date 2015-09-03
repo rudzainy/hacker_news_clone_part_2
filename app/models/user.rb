@@ -2,6 +2,8 @@ class User < ActiveRecord::Base
   # Remember to create a migration!
   has_many :posts
   has_many :comments
+  has_many :post_votes
+  has_many :comment_votes
 
   validates :name, presence: true, uniqueness: {
   	message: "The username has already been taken!"

@@ -1,12 +1,8 @@
 <div class="container">
-  <table>
+  <div id="list-to-sort">
     <% @comment.each do |comment| %>
-    <tr>
-      <td><span class="comment-user"><a href="/user_profile/<%= comment.user.id %>"><%= comment.user.name %></a> <%= comment.created_at   %> | on <a href="/view_post/<%= comment.post_id %>"><%= comment.post.title %></a></td>
-    </tr>
-    <tr>
-      <td><%= comment.comment %></td>
-    </tr>
+    <div class="post-user supertext"><a href="/comment_vote/<%= comment.id %>" id="vote_comment" data="<%= comment.id %>"><img src="../image/up_arrow.png" alt="upvote" width="18px"></a> <a href="/user_profile/<%= comment.user.id %>"><%= comment.user.name %></a> <%= calculate_time_ago(comment.created_at) %> | on <a href="/view_post/<%= comment.post_id %>"><%= comment.post.title %></a></div>
+    <div><p><%= comment.comment %></p></div>
     <% end %>
-  </table>
+  </div>
 </div>

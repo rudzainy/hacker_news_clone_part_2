@@ -1,17 +1,21 @@
 <div class="container">
-  <table>
+  <table id="list-to-sort">
     <% Post.all.reverse.each_with_index do |post, index| %>
     <tr>
+      <td class="greyed">
+        <%= index + 1 %>.
+      </td>
       <td>
       <% if post.link != "" %>
-      <span style="greyed"><%= index + 1 %>.</span> <a href="http://<%= post.link %>"><%= post.title %></a> <span class="post-url">(<%= post.link %>)</span>
+      <a href="/post_vote/<%= post.id %>" id="vote" data="<%= post.id %>"><img src="../image/up_arrow.png" alt="upvote" width="18px"></a><a href="http://<%= post.link %>"><%= post.title %></a> <span class="post-url">(<%= post.link %>)</span>
       <% else %>
-      <%= index + 1 %>. <a href="view_post/<%= post.id %>"><%= post.title %></a>
+      <a href="/post_vote/<%= post.id %>" id="vote" data="<%= post.id %>"><img src="../image/up_arrow.png" alt="upvote" width="18px"></a><a href="view_post/<%= post.id %>"><%= post.title %></a>
       <% end %>
       </td>
     </tr>
     <tr>
-      <td class="subtext"><span class="post-user">by <a href="/user_profile/<%= post.user.id %>"><%= post.user.name %></a> <%= calculate_time_ago(post.created_at) %> | <a href="view_post/<%= post.id %>"><%= post.comments.count %> comments</a></td>
+      <td></td>
+      <td class="subtext"><span class="post-user"><span id="count"><%= post.post_votes.count %></span> points by <a href="/user_profile/<%= post.user.id %>"><%= post.user.name %></a> <%= calculate_time_ago(post.created_at) %> | <a href="view_post/<%= post.id %>"><%= post.comments.count %> comments</a></span></td>
     </tr>
     <% end %>
   </table>

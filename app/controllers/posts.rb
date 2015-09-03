@@ -41,3 +41,22 @@ get '/user_posts/:id' do
 	@post = Post.where(user_id: params[:id])
 	erb :user_posts
 end
+
+get '/post_vote/:id' do
+
+	if session[:user_id]
+		current_user
+		@post = Post.find(params[:id])
+
+		if Post.check_duplicate_vote(@post.id, @current_user.id)
+			@flash = "You can only vote once per post!"
+			erb :view_post
+		else
+			PostVote.create(user_id: @current_user.id, post_id: @post.id)
+			erb :view_post
+		end
+	else
+		@flash = "Please log in or sign up to vote."
+		erb :login
+	end
+end
